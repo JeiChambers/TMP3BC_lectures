@@ -44,5 +44,3 @@ laugh_at = make_laugh_at("Linda!")
 print(laugh_at())
 print(laugh_at())
 print(laugh_at())
-    
-    
