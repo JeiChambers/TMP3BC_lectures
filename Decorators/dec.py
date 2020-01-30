@@ -30,6 +30,7 @@ def be_polite(fn):
         print("Have a great day!")
     return wrapper
 
+#  Decorators allow you to feed a function into another function as seen below! 
 @be_polite
 def greet():
     print("Hello my name is Jei.")
