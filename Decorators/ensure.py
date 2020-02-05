@@ -4,12 +4,12 @@ def ensure_no_kwargs(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
         if kwargs:
-            raise ValueError*("No kwargs allowed.")
+
+            raise TypeError*("No kwargs allowed.")
         return fn(*args, **kwargs)
     return wrapper
 @ensure_no_kwargs
-@ensure_first_arg(burrito)
 def greet(name):
     print(f"hi there, {name}")
 
-greet("Robin")
+greet(name="Terra")
