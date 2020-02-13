@@ -1,5 +1,5 @@
 import unittest
-from activities import eat, nap, is_funny
+from activities import eat, nap, is_funny, laugh
 
 class ActivityTests(unittest.TestCase):
     def test_eat_healthy(self):
@@ -16,6 +16,12 @@ class ActivityTests(unittest.TestCase):
             "I'm eating pizza, because YOLO."
         )
 
+    def test_eat_healthy_boolean(self):
+        """is_healthy must be a bool"""
+        with self.assertRaises(ValueError):
+            eat("pizza", is_healthy="who cares")
+
+
     def test_short_nap(self):
         """Nap should indicate you are refreshed"""
         self.assertEqual(
@@ -30,14 +36,7 @@ class ActivityTests(unittest.TestCase):
             "Ugh, I overslept. I didn't mean to nap for 3 hours!"
         )
 
-    def test_long_nap(self):
-        """Nap should indicate you are distressed"""
-        self.assertEqual(
-            nap(3), 
-            "Ugh, I overslept. I didn't mean to nap for 3 hours!"
-        )
-
-    def test_is_funny_tim(self):
+    def test_is_funny_tim(self): 
         """Tim Should not be funny!"""
         self.assertEqual(is_funny("Tim"), False)
             # self.assertFalse(is_funny("Tim"), "Tim should not be funny!")
@@ -48,7 +47,10 @@ class ActivityTests(unittest.TestCase):
         self.assertTrue(is_funny("Reina"), "Reina should be funny!")
         self.assertTrue(is_funny("Mirriam"), "Mirriam should be funny!")
 
-
+    def test_laugh(self):
+        """Should return one of three laughs."""
+        self.assertIn(laugh(), ('lol', 'haha', 'jajaja'))
+        
 
 if __name__ == "__main__":
     unittest.main()
