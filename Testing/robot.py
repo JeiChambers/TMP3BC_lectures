@@ -4,7 +4,7 @@ class Robot:
         self.battery = battery
         self.skills = skills
 
-    def charge(self):
+    def charge(self):+
         self.battery = 100
         return self
     
