@@ -26,7 +26,7 @@ class DeckTests(unittest.TestCase):
 
     def test_repr(self):
         """Deck should display 'Deck of 52' cards"""
-        self.assertEqual(repr(self.deck), "Deck of 52 cards")
+        self.assertEqual(repr(self.deck), "Deck of 52 cards.")
 
     def test_count(self):
         """Should return a length of 52"""
@@ -59,5 +59,6 @@ class DeckTests(unittest.TestCase):
         self.assertNotEqual(cards, self.deck.cards)
         self.assertEqual(self.deck.count(), 52)
 
-
+if __name__ == '__main__':
+    unittest.main()
     
