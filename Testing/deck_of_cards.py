@@ -13,7 +13,7 @@ class Deck:
     def __init__(self):
         suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
         values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10','J','Q','K'] 
-        self.cards = [Card(suit, value) for suit in suits for value in values]
+        self.cards = [Card(value, suit) for suit in suits for value in values]
 
     def __repr__(self):
         return f"Deck of {self.count()} cards."
@@ -52,3 +52,5 @@ class Deck:
 
 d = Deck()
 d.shuffle()
+c = Card("A", "Spades")
+print(c)

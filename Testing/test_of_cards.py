@@ -4,7 +4,7 @@ import unittest
 
 class CardTest(unittest.TestCase):
     def setUp(self):
-        self.card = Card("Spades", "A")
+        self.card = Card("A", "Spades")
 
     def test_init(self):
         """cards should have a suit and a value"""
