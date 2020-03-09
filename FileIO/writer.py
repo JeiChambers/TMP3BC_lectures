@@ -61,8 +61,8 @@ def update_users(old_first, old_last, new_first, new_last):
         return f"User updated: {count}."
 
 
-### Delete Users Exercise ###
 
+### Delete Users Exercise ###
 import csv
 
 def delete_users(first, last):
